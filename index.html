@@ -186,8 +186,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--warm);color:var(--text);l
  <button class="nav-btn" onclick="showPanel('deliverables',this)">All Deliverables</button>
  <button class="nav-btn" onclick="showPanel('terms',this)">Data &amp; Terms</button>
  <button class="nav-btn" onclick="showPanel('discovery',this)">Sample Discovery Session</button>
- <button class="nav-btn" onclick="showPanel('prepform',this)">Sample Collection Form</button>
- </div>
+  </div>
 </div>
 
 <!-- ══ THE WORK ══════════════════════════════════════════════════ -->
@@ -1554,4 +1553,22 @@ body{font-family:'DM Sans',sans-serif;background:var(--warm);color:var(--text);l
  <div class="q-text">Of the five to eight students you brought — <strong>for any student who has been in the current support level for more than one diagnostic cycle,</strong> what is the documented reason they have not moved? Is that reason written down anywhere?</div>
  <div class="q-listen">
  <div class="q-listen-label">What this surfaces</div>
- Whether movement decisions are documented or assumed. A student who has been 
+ Whether movement decisions are documented or assumed. A student who has been
+ in the same support level across multiple cycles is the clearest signal that a documented movement decision is missing.
+</div></div></div>
+</div></div>
+</div></div>
+<script>
+function showPanel(id, btn){
+  document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active');});
+  var el=document.getElementById('panel-'+id); if(el){el.classList.add('active');}
+  document.querySelectorAll('.nav-btn').forEach(function(b){b.classList.remove('active');});
+  if(btn){btn.classList.add('active');}
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function toggleQArea(n){
+  var qa=document.getElementById('qa'+n); if(qa){qa.classList.toggle('closed');}
+}
+</script>
+</body>
+</html>
